@@ -7,8 +7,9 @@ checking style compliance, running tests, and providing personalized feedback.
 """
 
 try:
-    from .agent import root_agent
-    __all__ = ["root_agent"]
-except (ImportError, AttributeError):
-    # Module 5 not completed yet
+    from .agent import agent, root_agent
+    __all__ = ["agent", "root_agent"]
+except (ImportError, AttributeError) as e:
+    import logging
+    logging.getLogger(__name__).error(f"Failed to automatically discover root agent: {e}", exc_info=True)
     __all__ = []

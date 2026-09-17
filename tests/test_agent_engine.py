@@ -64,7 +64,7 @@ Please analyze ```
 
 def dfs_search_v1(graph, start, target):
     visited = set()
-    stack = start
+    stack = [start]
 
     while stack:
         current = stack.pop()
